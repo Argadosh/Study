@@ -141,9 +141,11 @@
   <ItemGroup>
     <ClCompile Include="Circle.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="Paddle.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Circle.h" />
+    <ClInclude Include="Paddle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,5 +1,6 @@
 #include "raylib.h"
 #include "Circle.h"
+#include "Paddle.h"
 
 int main() {
 
@@ -12,6 +13,10 @@ int main() {
 
 	Ball ball;
 	InitCircle(&ball);
+	Paddle LeftPaddle;
+	InitLeftPaddle(&LeftPaddle);
+	Paddle RigthPaddle;
+	InitRigthPaddle(&RigthPaddle);
 	
 	while (!WindowShouldClose()) {
 
@@ -19,9 +24,11 @@ int main() {
 		ClearBackground(BLACK);
 		DrawFPS(ScreenWidth / 2 - 50, 0);
 		BallMove(&ball);
+		MoveLeftPaddle(&LeftPaddle);
+		MoveRigthPaddle(&RigthPaddle);
 		DrawBall(&ball);
-		DrawRectangle(10, GetScreenHeight() / 2 - 50, 10, 100, RAYWHITE);
-		DrawRectangle(GetScreenWidth() - 10 - 10, GetScreenHeight() / 2 - 50, 10, 100, RAYWHITE);
+		DrawLeftPaddle(&LeftPaddle);
+		DrawRigthPaddle(&RigthPaddle);
 		EndDrawing();
 
 	}

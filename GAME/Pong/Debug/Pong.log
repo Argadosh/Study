@@ -1,2 +1,15 @@
-﻿  main.c
+﻿  Paddle.c
+C:\Users\ARGADOSH\source\repos\GAME\Pong\Paddle.c(11,32): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\ARGADOSH\source\repos\GAME\Pong\Paddle.c(18,31): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\ARGADOSH\source\repos\GAME\Pong\Paddle.c(19,32): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\ARGADOSH\source\repos\GAME\Pong\Paddle.c(26,26): warning C4244: функция: преобразование "float" в "int", возможна потеря данных
+C:\Users\ARGADOSH\source\repos\GAME\Pong\Paddle.c(26,57): warning C4244: функция: преобразование "float" в "int", возможна потеря данных
+C:\Users\ARGADOSH\source\repos\GAME\Pong\Paddle.c(26,85): warning C4244: функция: преобразование "float" в "int", возможна потеря данных
+C:\Users\ARGADOSH\source\repos\GAME\Pong\Paddle.c(26,100): warning C4244: функция: преобразование "float" в "int", возможна потеря данных
+C:\Users\ARGADOSH\source\repos\GAME\Pong\Paddle.c(30,26): warning C4244: функция: преобразование "float" в "int", возможна потеря данных
+C:\Users\ARGADOSH\source\repos\GAME\Pong\Paddle.c(30,57): warning C4244: функция: преобразование "float" в "int", возможна потеря данных
+C:\Users\ARGADOSH\source\repos\GAME\Pong\Paddle.c(30,85): warning C4244: функция: преобразование "float" в "int", возможна потеря данных
+C:\Users\ARGADOSH\source\repos\GAME\Pong\Paddle.c(30,100): warning C4244: функция: преобразование "float" в "int", возможна потеря данных
+  main.c
+  Создание кода...
   Pong.vcxproj -> C:\Users\ARGADOSH\source\repos\GAME\Debug\Pong.exe
