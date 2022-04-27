@@ -1,4 +1,5 @@
 #pragma once
+#include "Paddle.h"
 
 typedef struct Ball {
 
@@ -8,8 +9,10 @@ typedef struct Ball {
 
 } Ball;
 
-void InitCircle(Ball* );
+void InitCircle(Ball*);
 
-void BallMove(Ball* );
+void BallMove(Ball*, Paddle*, Paddle*);
 
-void DrawBall(Ball* );
+void DrawBall(Ball*);
+
+void EndGame(Ball*, const char*);

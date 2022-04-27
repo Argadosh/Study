@@ -10,11 +10,9 @@ typedef struct Paddle {
 
 void InitLeftPaddle(Paddle*);
 
-void InitRigthPaddle(Paddle*);
+void InitRightPaddle(Paddle*);
 
-void DrawLeftPaddle(Paddle*);
-
-void DrawRigthPaddle(Paddle*);
+void DrawPaddle(Paddle*);
 
 void MoveLeftPaddle(Paddle*);
 

@@ -4,31 +4,37 @@
 
 int main() {
 
-	const int ScreenWidth = 800;
-	const int ScreenHeight = 450;
+	const int ScreenWidth = 1000;
+	const int ScreenHeight = 600;
 
 	InitWindow(ScreenWidth, ScreenHeight, "Pong");
 	SetWindowState(FLAG_VSYNC_HINT);
-
 
 	Ball ball;
 	InitCircle(&ball);
 	Paddle LeftPaddle;
 	InitLeftPaddle(&LeftPaddle);
-	Paddle RigthPaddle;
-	InitRigthPaddle(&RigthPaddle);
+	Paddle RightPaddle;
+	InitRightPaddle(&RightPaddle);
+	const char* WinnerText = NULL;
 	
 	while (!WindowShouldClose()) {
 
 		BeginDrawing();
 		ClearBackground(BLACK);
+		EndGame(&ball, WinnerText);
+		if (IsKeyPressed(KEY_SPACE)) {
+			InitCircle(&ball);
+			InitLeftPaddle(&LeftPaddle);
+			InitRightPaddle(&RightPaddle);
+		}
 		DrawFPS(ScreenWidth / 2 - 50, 0);
-		BallMove(&ball);
+		BallMove(&ball, &LeftPaddle, &RightPaddle);
 		MoveLeftPaddle(&LeftPaddle);
-		MoveRigthPaddle(&RigthPaddle);
+		MoveRigthPaddle(&RightPaddle);
 		DrawBall(&ball);
-		DrawLeftPaddle(&LeftPaddle);
-		DrawRigthPaddle(&RigthPaddle);
+		DrawPaddle(&LeftPaddle);
+		DrawPaddle(&RightPaddle);
 		EndDrawing();
 
 	}
