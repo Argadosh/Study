@@ -1,7 +1,7 @@
 #include "Circle.h"
 #include "Paddle.h"
 #include "raylib.h"
-#include "stdlib.h"
+
 
 #define LEFT_WINNER_TEXT "LEFT PLAYER WIN"
 #define RIGHT_WINNER_TEXT "RIGHT PLAYER WIN"
@@ -26,19 +26,31 @@ void BallMove(Ball* ball, Paddle* Leftpaddle, Paddle* Rightpaddle) {
 	ball->x += ball->speedX * GetFrameTime();
 	ball->y += ball->speedY * GetFrameTime();
 
+	Sound sound_collision_up_down = LoadSound("C:/Users/ARGADOSH/source/repos/GAME/lovi-myach.wav");
+	SetSoundVolume(sound_collision_up_down, 0.2f);
+	Sound sound_collision_rectangle = LoadSound("C:/Users/ARGADOSH/source/repos/GAME/otbivanie-myacha.wav");
+	SetSoundVolume(sound_collision_rectangle, 0.1f);
+
+
 	if (ball->y - ball->radius < 0) {
+		PlaySoundMulti(sound_collision_up_down);
 		ball->speedY *= -1;
+
 	}
 	if (ball->y + ball->radius > GetScreenHeight()) {
+		PlaySoundMulti(sound_collision_up_down);
 		ball->speedY *= -1;
 	}
 	if (CheckCollisionCircleRec((Vector2){ball->x, ball->y}, ball->radius, (Rectangle){Leftpaddle->x - Leftpaddle->width / 2, Leftpaddle->y - Leftpaddle->height / 2, Leftpaddle->width, Leftpaddle->height})) {
+		PlaySoundMulti(sound_collision_rectangle);
 		ball->speedX *= -1.1;
 		Leftpaddle->speed *= 1.1;
 	}
 	if (CheckCollisionCircleRec((Vector2){ball->x, ball->y}, ball->radius, (Rectangle){Rightpaddle->x - Rightpaddle->width / 2, Rightpaddle->y - Rightpaddle->height / 2, Rightpaddle->width, Rightpaddle->height})) {
+		PlaySoundMulti(sound_collision_rectangle);
 		ball->speedX *= -1.1;
 		Rightpaddle->speed *= 1.1;
+
 	}
 	
 }

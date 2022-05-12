@@ -1,8 +1,12 @@
 ﻿  Circle.c
 C:\Users\ARGADOSH\source\repos\GAME\Pong\Circle.c(21,42): warning C4244: =: преобразование "int" в "float", возможна потеря данных
 C:\Users\ARGADOSH\source\repos\GAME\Pong\Circle.c(22,42): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-C:\Users\ARGADOSH\source\repos\GAME\Pong\Circle.c(36,23): warning C4305: *=: усечение из "double" в "float"
-C:\Users\ARGADOSH\source\repos\GAME\Pong\Circle.c(37,27): warning C4305: *=: усечение из "double" в "float"
-C:\Users\ARGADOSH\source\repos\GAME\Pong\Circle.c(40,23): warning C4305: *=: усечение из "double" в "float"
-C:\Users\ARGADOSH\source\repos\GAME\Pong\Circle.c(41,28): warning C4305: *=: усечение из "double" в "float"
+C:\Users\ARGADOSH\source\repos\GAME\Pong\Circle.c(46,23): warning C4305: *=: усечение из "double" в "float"
+C:\Users\ARGADOSH\source\repos\GAME\Pong\Circle.c(47,27): warning C4305: *=: усечение из "double" в "float"
+C:\Users\ARGADOSH\source\repos\GAME\Pong\Circle.c(51,23): warning C4305: *=: усечение из "double" в "float"
+C:\Users\ARGADOSH\source\repos\GAME\Pong\Circle.c(52,28): warning C4305: *=: усечение из "double" в "float"
+  main.c
+C:\Users\ARGADOSH\source\repos\GAME\Pong\main.c(26,29): warning C4047: функция: "const char *" отличается по уровням косвенного обращения от "char **"
+C:\Users\ARGADOSH\source\repos\GAME\Pong\main.c(26,18): warning C4024: EndGame: различные типы для формального и фактического параметров 2
+  Создание кода...
   Pong.vcxproj -> C:\Users\ARGADOSH\source\repos\GAME\Debug\Pong.exe

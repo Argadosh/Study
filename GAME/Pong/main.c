@@ -7,6 +7,7 @@ int main() {
 	const int ScreenWidth = 1000;
 	const int ScreenHeight = 600;
 
+	InitAudioDevice();
 	InitWindow(ScreenWidth, ScreenHeight, "Pong");
 	SetWindowState(FLAG_VSYNC_HINT);
 
@@ -16,13 +17,13 @@ int main() {
 	InitLeftPaddle(&LeftPaddle);
 	Paddle RightPaddle;
 	InitRightPaddle(&RightPaddle);
-	const char* WinnerText = NULL;
+	char* WinnerText = NULL;
 	
 	while (!WindowShouldClose()) {
 
 		BeginDrawing();
 		ClearBackground(BLACK);
-		EndGame(&ball, WinnerText);
+		EndGame(&ball, &WinnerText);
 		if (IsKeyPressed(KEY_SPACE)) {
 			InitCircle(&ball);
 			InitLeftPaddle(&LeftPaddle);
@@ -38,6 +39,6 @@ int main() {
 		EndDrawing();
 
 	}
-
+	
 	return 0;
 }
