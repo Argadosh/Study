@@ -11,6 +11,11 @@ int main() {
 	InitWindow(ScreenWidth, ScreenHeight, "Pong");
 	SetWindowState(FLAG_VSYNC_HINT);
 
+	Sound sound_collision_up_down = LoadSound("C:/Users/ARGADOSH/source/repos/GAME/lovi-myach.wav");
+	SetSoundVolume(sound_collision_up_down, 0.2f);
+	Sound sound_collision_rectangle = LoadSound("C:/Users/ARGADOSH/source/repos/GAME/otbivanie-myacha.wav");
+	SetSoundVolume(sound_collision_rectangle, 0.1f);
+
 	Ball ball;
 	InitCircle(&ball);
 	Paddle LeftPaddle;
@@ -30,7 +35,7 @@ int main() {
 			InitRightPaddle(&RightPaddle);
 		}
 		DrawFPS(ScreenWidth / 2 - 50, 0);
-		BallMove(&ball, &LeftPaddle, &RightPaddle);
+		BallMove(&ball, &LeftPaddle, &RightPaddle, sound_collision_up_down, sound_collision_rectangle);
 		MoveLeftPaddle(&LeftPaddle);
 		MoveRigthPaddle(&RightPaddle);
 		DrawBall(&ball);

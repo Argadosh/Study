@@ -22,14 +22,9 @@ void InitCircle(Ball* ball) {
 	ball->speedY = GetRandomValue(250, 400) * RandomValueY;
 }
 
-void BallMove(Ball* ball, Paddle* Leftpaddle, Paddle* Rightpaddle) {
+void BallMove(Ball* ball, Paddle* Leftpaddle, Paddle* Rightpaddle, Sound sound_collision_up_down, Sound sound_collision_rectangle) {
 	ball->x += ball->speedX * GetFrameTime();
 	ball->y += ball->speedY * GetFrameTime();
-
-	Sound sound_collision_up_down = LoadSound("C:/Users/ARGADOSH/source/repos/GAME/lovi-myach.wav");
-	SetSoundVolume(sound_collision_up_down, 0.2f);
-	Sound sound_collision_rectangle = LoadSound("C:/Users/ARGADOSH/source/repos/GAME/otbivanie-myacha.wav");
-	SetSoundVolume(sound_collision_rectangle, 0.1f);
 
 
 	if (ball->y - ball->radius < 0) {
@@ -59,10 +54,16 @@ void EndGame(Ball* ball, const char* WinnerText) {
 
 	if (ball->x < 0) {
 		WinnerText = RIGHT_WINNER_TEXT;
+		ball->speedX = 0;
+		ball->speedY = 0;
+		ball->radius = 0;
 	}
 
 	if (ball->x > GetScreenWidth()) {
 		WinnerText = LEFT_WINNER_TEXT;
+		ball->speedX = 0;
+		ball->speedY = 0;
+		ball->radius = 0;
 	}
 
 	if (WinnerText) {
